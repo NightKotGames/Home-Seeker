@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: policeman_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 129c8785a53bb66468c31739d0fec278, type: 2}
+  - {fileID: 11400000, guid: d742dca461b97f347bbbf05859d7bf37, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: 0b8498c60f014c84196771305db8b221, type: 3}
   isUpgradingBlendModeMaterials: 0

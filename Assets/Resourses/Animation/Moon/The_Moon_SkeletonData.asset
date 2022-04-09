@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: The_Moon_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 9d6a3326c4487614780267f05979450f, type: 2}
-  scale: 0.006
+  - {fileID: 11400000, guid: 6a99f5c377938184daa880b43fee7250, type: 2}
+  scale: 0.0055
   skeletonJSON: {fileID: 4900000, guid: 29f13fe56bdce5d46a38c46ab8b8a6e6, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:

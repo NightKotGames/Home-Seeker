@@ -8,7 +8,6 @@ public class PatrolState : State
 
     public static event Action<Animations.PoliceMan, bool> SetAnim = delegate { };
 
-
     [Header("State Options")]
     [SerializeField] private float _maxDistance = 5f;
 
@@ -16,7 +15,6 @@ public class PatrolState : State
     [SerializeField] private Animations.PoliceMan _anim;
 
     private Vector3 _randomPos;
-
 
     public override void Init()
     {

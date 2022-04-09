@@ -259,8 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: Alarm
   _skinName: default
-  _speed: 1
-  _animationEnd: 0
+  _speedAnimation: 1
 --- !u!114 &7371216100842657386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,8 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: Idle
   _skinName: default
-  _speed: 1
-  _animationEnd: 0
+  _speedAnimation: 1
 --- !u!74 &8662418083426341641
 AnimationClip:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: thief_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 7bbb32ca5e6727d4aa566fc4dcc4fc18, type: 2}
+  - {fileID: 11400000, guid: f8e506684cfee714aa7ec27a3c4421e6, type: 2}
   scale: 0.0022
   skeletonJSON: {fileID: 4900000, guid: d4f0b1b9f4b63f84ca06f513978ad537, type: 3}
   isUpgradingBlendModeMaterials: 0

@@ -22,11 +22,11 @@ public class EatState : State
 
     private NPC _nPC;
 
-    public void OnEnable()
+    private void OnEnable()
     {
         NPC.NeedsRestore += RestoreNeeds;
     }
-    public void OnDisable()
+    private void OnDisable()
     {
         NPC.NeedsRestore -= RestoreNeeds;
     }

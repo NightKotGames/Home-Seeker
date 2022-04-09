@@ -22,23 +22,23 @@ public class Speaker : MonoBehaviour
         _audio = GetComponent<AudioSource>();
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
-        AlarmZoneDetector.Alarm += OnSetAlarm;
+        AlarmZoneDetector.AlarmTriggered += OnSetAlarm;
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
-        AlarmZoneDetector.Alarm -= OnSetAlarm;
+        AlarmZoneDetector.AlarmTriggered -= OnSetAlarm;
     }
 
-    private void OnSetAlarm(bool alarmState, GameObject enemyObj)
+    private void OnSetAlarm(bool _alarmState, GameObject _enemy)
     {
-        if (alarmState)
+        if (_alarmState)
         {
             AlarmON();
         }
-        else if (!alarmState)
+        else if (!_alarmState)
         {
             AlarmOFF();
         }
@@ -46,19 +46,19 @@ public class Speaker : MonoBehaviour
 
     private void AlarmOFF()
     {
-        float currentVolume = _maxVolume;
+        float _currentVolume = _maxVolume;
         StartCoroutine(SetVolume());
         IEnumerator SetVolume()
         {
-            while (currentVolume > 0f)
+            while (_currentVolume > 0f)
             {
 
                 yield return new WaitForSeconds(.2f);
                 {
-                    currentVolume -= _maxVolume / 10;
+                    _currentVolume -= _maxVolume / 10;
                 }
 
-                _audio.volume = currentVolume;
+                _audio.volume = _currentVolume;
             }
 
             StopCoroutine(SetVolume());

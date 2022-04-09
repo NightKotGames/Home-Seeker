@@ -8,7 +8,7 @@ public class AttackState : State
 {
 
     public static event Action<Animations.PoliceMan, bool> SetAnim = delegate { };
-    public static event Action Hit = delegate { };
+    public static event Action TakeHit = delegate { };
 
     [Header("StateOptions")]
     [SerializeField] private float _distance;
@@ -52,16 +52,16 @@ public class AttackState : State
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
-        HideZone.Hide += Hide;
-        AlarmZoneDetector.Alarm += Alarm;
+        HideZone.ActivateHide += Hide;
+        AlarmZoneDetector.AlarmTriggered += Alarm;
 
     }
-    public void OnDisable()
+    private void OnDisable()
     {
-        HideZone.Hide -= Hide;
-        AlarmZoneDetector.Alarm -= Alarm;
+        HideZone.ActivateHide -= Hide;
+        AlarmZoneDetector.AlarmTriggered -= Alarm;
 
     }
 
@@ -106,7 +106,7 @@ public class AttackState : State
                     IEnumerator Wait()
                     {
                         yield return new WaitForSeconds(_time);
-                        Hit.Invoke();
+                        TakeHit.Invoke();
                     }
                     _monoBehaviour.StopCoroutine(Wait());
                 }

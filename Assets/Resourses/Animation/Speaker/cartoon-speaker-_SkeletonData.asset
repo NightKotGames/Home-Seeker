@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: cartoon-speaker-_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: d3a0db9f82845bb48a22b32c30136abe, type: 2}
-  scale: 0.0015
+  - {fileID: 11400000, guid: 4cb33d9c5585a6340bdc713c90f90f61, type: 2}
+  scale: 0.0017
   skeletonJSON: {fileID: 4900000, guid: 4e82b53f2038e8a45bca27de12c7aaf9, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: 5e3acae0c37781042978cb83c9668e95, type: 2}
+  controller: {fileID: 0}

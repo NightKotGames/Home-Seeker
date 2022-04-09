@@ -19,11 +19,11 @@ public class PhoneCabin : MonoBehaviour
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         CallState.Phone += DoorState;
     }
-    public void OnDisable()
+    private void OnDisable()
     {
         CallState.Phone -= DoorState;
     }

@@ -150,8 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: walk
   _skinName: default
-  _speed: 1
-  _animationEnd: 0
+  _speedAnimation: 1
 --- !u!74 &-1939670497020908961
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -345,8 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: Idle
   _skinName: default
-  _speed: 1
-  _animationEnd: 0
+  _speedAnimation: 1
 --- !u!1101 &1767956732634374876
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -673,8 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: Hit
   _skinName: default
-  _speed: 1
-  _animationEnd: 0
+  _speedAnimation: 1
 --- !u!74 &5395170402218168867
 AnimationClip:
   m_ObjectHideFlags: 0

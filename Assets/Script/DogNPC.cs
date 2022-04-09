@@ -30,11 +30,11 @@ public class DogNPC : MonoBehaviour
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         WalkState.RestorePos += RestorePos;
     }
-    public void OnDisable()
+    private void OnDisable()
     {
         WalkState.RestorePos -= RestorePos;
     }

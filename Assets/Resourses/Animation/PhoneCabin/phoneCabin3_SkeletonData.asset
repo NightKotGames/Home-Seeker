@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: phoneCabin3_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: dde49bcd38b5f564eb9e5080a4384aff, type: 2}
-  scale: 0.006
+  - {fileID: 11400000, guid: 78e9eca3c32b2934ebd238088a71349c, type: 2}
+  scale: 0.0055
   skeletonJSON: {fileID: 4900000, guid: dcca2e4a92924794d98693131865012e, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: 63fccf8ee4f479b41b849f506e655106, type: 2}
+  controller: {fileID: 0}

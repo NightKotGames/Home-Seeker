@@ -80,7 +80,6 @@ public class NPC : MonoBehaviour
     #endregion
 
     [HideInInspector] public Vector3 StartPos;
-    private Vector3 _lookPoint;
     private bool _alarm = false;
     private bool _hide;
 
@@ -97,28 +96,28 @@ public class NPC : MonoBehaviour
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         EatState.Eating += RestoreNeeds;
         CallState.Calling += RestoreNeeds;
-        AlarmZoneDetector.Alarm += Alarm;
-        HideZone.Hide += Hide;
+        AlarmZoneDetector.AlarmTriggered += AlarmTriggered;
+        HideZone.ActivateHide += OnSetHide;
         WaitState.Wait += RestoreNeeds;
 
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         EatState.Eating -= RestoreNeeds;
         CallState.Calling -= RestoreNeeds;
-        AlarmZoneDetector.Alarm -= Alarm;
-        HideZone.Hide -= Hide;
+        AlarmZoneDetector.AlarmTriggered -= AlarmTriggered;
+        HideZone.ActivateHide -= OnSetHide;
         WaitState.Wait -= RestoreNeeds;
 
     }
 
 
-    void Update()
+    private void Update()
     {
         _npcNeeds[Needs.NeedsCollection.hungry] += _hungryProgress;
         _npcNeeds[Needs.NeedsCollection.boredom] += _boredomProgress;
@@ -183,26 +182,27 @@ public class NPC : MonoBehaviour
 
     }
 
-    public void MoveTo(Vector3 position)
+    public void MoveTo(Vector3 target)
     {
-        position.z = transform.position.z;
-        position.y = transform.position.y;
-        transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime * _speed);
+        target.z = transform.position.z;
+        target.y = transform.position.y;
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * _speed);
 
     }
 
-    private void Alarm(bool _alarm, GameObject _enemy)
+    private void AlarmTriggered(bool _alarm, GameObject _enemy)
     {
         this._alarm = _alarm;
     }
 
-    private void Hide(bool _hide, GameObject _enemy)
+    private void OnSetHide(bool _hide, GameObject _enemy)
     {
         this._hide = _hide;
     }
 
     private void RestoreNeeds(Needs.NeedsCollection _needs, float _time)
     {
+
         StartCoroutine(NeedsReset());
         IEnumerator NeedsReset()
         {
@@ -211,6 +211,7 @@ public class NPC : MonoBehaviour
             NeedsRestore.Invoke(_needs);
         }
         StopCoroutine(NeedsReset());
+
     }
 
 }

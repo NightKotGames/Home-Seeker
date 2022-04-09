@@ -6,14 +6,14 @@ using UnityEngine;
 public class HideZone : MonoBehaviour
 {
 
-    public static Action<bool, GameObject> Hide = delegate { };
+    public static Action<bool, GameObject> ActivateHide = delegate { };
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent(out CharacterController objectStatus))
         {
 
-            Hide(true, other.gameObject);
+            ActivateHide(true, other.gameObject);
 
         }
 
@@ -24,7 +24,7 @@ public class HideZone : MonoBehaviour
         if (other.gameObject.TryGetComponent(out CharacterController objectStatus))
         {
 
-            Hide(false, other.gameObject);
+            ActivateHide(false, other.gameObject);
 
         }
 

@@ -15,13 +15,15 @@ public class AnimationController : MonoBehaviour
 
     private void Awake()
     {
+
         _animator = GetComponent<Animator>();
         _anim = _animator.GetComponent<SkeletonAnimation>();
 
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
+
         PatrolState.SetAnim += SetAnimation;
         EatState.SetAnim += SetAnimation;
         AttackState.SetAnim += SetAnimation;
@@ -29,8 +31,9 @@ public class AnimationController : MonoBehaviour
         CallState.SetAnim += SetAnimation;
 
     }
-    public void OnDisable()
+    private void OnDisable()
     {
+
         PatrolState.SetAnim -= SetAnimation;
         EatState.SetAnim -= SetAnimation;
         AttackState.SetAnim -= SetAnimation;
